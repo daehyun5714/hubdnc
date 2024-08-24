@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/pc.css">
+    <link rel="stylesheet" href="./css/tab.css">
+    <link rel="stylesheet" href="./css/mo.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="158"
+                    height="38" viewBox="0 0 158 38">
+                    <defs>
+                        <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="0 0 500 121">
+                            <image width="500" height="121"
+                                xlink:href="data:image/png;base64,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" />
+                        </pattern>
+                    </defs>
+                    <rect id="허브디앤씨-로고_블랙_" data-name="허브디앤씨-로고(블랙)" width="158" height="38" fill="url(#pattern)" />
+                </svg>
+            </div>
+
+            <div class="header-center">
+                <div class="search">
+                    <!-- <div class="inner-search">채널명을 검색해주세요.</div> -->
+                    <input type="search" placeholder="채널명을 검색해주세요." class="inner-search">
+                    <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg" width="18.451" height="18.4"
+                            viewBox="0 0 18.451 18.4">
+                            <g id="search" transform="translate(0.2 -0.416)">
+                                <g id="그룹_7" data-name="그룹 7" transform="translate(0 0.616)">
+                                    <g id="그룹_6" data-name="그룹 6" transform="translate(0 0)">
+                                        <path id="패스_28" data-name="패스 28"
+                                            d="M7.958.616a7.958,7.958,0,1,0,7.958,7.958A7.967,7.967,0,0,0,7.958.616Zm0,14.608a6.65,6.65,0,1,1,6.654-6.65A6.66,6.66,0,0,1,7.958,15.224Z"
+                                            transform="translate(0 -0.616)" fill="#bfc6cc" stroke="#bfc6cc"
+                                            stroke-width="0.4" />
+                                    </g>
+                                </g>
+                                <g id="그룹_9" data-name="그룹 9" transform="translate(12.537 13.174)">
+                                    <g id="그룹_8" data-name="그룹 8">
+                                        <path id="패스_29" data-name="패스 29"
+                                            d="M358.742,357.819l-4.188-4.167a.638.638,0,1,0-.9.9l4.188,4.167a.638.638,0,1,0,.9-.9Z"
+                                            transform="translate(-353.466 -353.466)" fill="#bfc6cc" stroke="#bfc6cc"
+                                            stroke-width="0.4" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="analyze">
+                    <div class="analyze-wrap">
+                        <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="12" viewBox="0 0 11 12">
+                                <defs>
+                                    <linearGradient id="linear-gradient" x1="1" y1="0.5" x2="0.056" y2="0.5"
+                                        gradientUnits="objectBoundingBox">
+                                        <stop offset="0" stop-color="#2ea1d0" />
+                                        <stop offset="1" stop-color="#33c2d7" />
+                                    </linearGradient>
+                                </defs>
+                                <path id="hexagon_2_" data-name="hexagon (2)" d="M0,17.875l3-5.5H9l3,5.5-3,5.5H3Z"
+                                    transform="translate(23.375) rotate(90)" opacity="0.8"
+                                    fill="url(#linear-gradient)" />
+                            </svg>
+                            <p>Youtube분석</p>
+                        </a>
+                    </div>
+                    <a href="javascript:;">
+                        <p class="NB">게시판</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="login">
+                <p><a href="javascript:;">설정</a></p>
+                <span></span>
+                <p><a href="javascript:;">로그인</a></p>
+            </div>
+        </div>
+
+        <div class="header-btm">
+            <ul class="inner-header-btm">
+                <li><a href="javascript:;">카테고리 분석</a></li>
+                <li><a href="javascript:;">채널 분석</a></li>
+                <li><a href="javascript:;">영상 분석</a></li>
+            </ul>
+        </div>
+    </header>
+    <!--header-->
+
+    <section id="fixed-con">
+        <div class="fixed-con">
+            <div class="fixed-conL">
+                <a href="javascirpt:;">
+                    <div class="fixed-conLImg">
+                        <img src="./img/fixed-con/fixed-conL.png" alt="콘텐츠 이미지">
+                    </div>
+                    <p>얌무</p>
+                </a>
+
+                <div class="click-event">
+                    <div class="click-con">
+                        <a href="javascript:;">
+                            <img src="./img/click-con/click-con1.png" alt="이미지">
+                            <img src="./img/icon/click-con1-icon.png" alt="아이콘" class="click-conIcon">
+                            <p>엔조이커플</p>
+                        </a>
+                    </div>
+                    <div class="click-con">
+                        <a href="javascript:;">
+                            <img src="./img/click-con/click-con2.png" alt="이미지">
+                            <p>초승달</p>
+                        </a>
+                    </div>
+                    <div class="click-con">
+                        <a href="javascript:;">
+                            <img src="./img/click-con/click-con3.png" alt="이미지">
+                            <p>풍월량</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vs">vs</div>
+
+            <div class="fixed-conR">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide fixed-conR1">
+                            <div class="conRImg">
+                                <img src="./img/fixed-con/fixed-conR1.png" alt="콘텐츠 이미지">
+                                <img src="./img/icon/favorites.png" alt="구독" class="favorites favoritesW">
+                            </div>
+                            <p>장삐쭈</p>
+                        </div>
+                        <div class="swiper-slide fixed-conR2">
+                            <div class="conRImg">
+                                <img src="./img/fixed-con/fixed-conR2.png" alt="콘텐츠 이미지">
+                                <img src="./img/icon/favorites.png" alt="구독" class="favorites favoritesW">
+                            </div>
+                            <p>초승달</p>
+                        </div>
+                        <div class="swiper-slide fixed-conR3">
+                            <div class="conRImg">
+                                <img src="./img/fixed-con/fixed-conR3.png" alt="콘텐츠 이미지">
+                                <img src="./img/icon/favorites(not).png" alt="구독" class="favoritesN favoritesW">
+                            </div>
+                            <p>풍월량</p>
+                        </div>
+                        <div class="swiper-slide fixed-conR4">
+                            <div class="conRImg">
+                                <img src="./img/fixed-con/fixed-conR4.png" alt="콘텐츠 이미지">
+                                <img src="./img/icon/favorites(not).png" alt="구독" class="favoritesN favoritesW">
+                            </div>
+                            <p>선바</p>
+                        </div>
+                        <div class="swiper-slide fixed-conR5">
+                            <div class="conRImg">
+                                <img src="./img/fixed-con/fixed-conR5.png" alt="콘텐츠 이미지">
+                                <img src="./img/icon/favorites(not).png" alt="구독" class="favoritesN favoritesW">
+                            </div>
+                            <p>엔조이커플</p>
+                        </div>
+                        <div class="swiper-slide fixed-conR6">
+                            <div class="conRImg">
+                                <img src="./img/fixed-con/fixed-conR6.png" alt="콘텐츠 이미지">
+                                <img src="./img/icon/favorites(not).png" alt="구독" class="favoritesN favoritesW">
+                            </div>
+                            <p>도티</p>
+                        </div>
+                        <div class="swiper-slide fixed-conR7">
+                            <div class="conRImg">
+                                <img src="./img/fixed-con/fixed-conR7.png" alt="콘텐츠 이미지">
+                                <img src="./img/icon/favorites(not).png" alt="구독" class="favoritesN favoritesW">
+                            </div>
+                            <p>엔조이커플</p>
+                        </div>
+                        <div class="swiper-slide fixed-conR8">
+                            <div class="conRImg">
+                                <img src="./img/fixed-con/fixed-conR8.png" alt="콘텐츠 이미지">
+                                <img src="./img/icon/favorites(not).png" alt="구독" class="favoritesN favoritesW">
+                            </div>
+                            <p>떵개떵</p>
+                        </div>
+                        <div class="swiper-slide fixed-conR9">
+                            <img src="./img/fixed-con/fixed-conR9.png" alt="콘텐츠 이미지">
+                        </div>
+                        <div class="swiper-slide fixed-conR9">
+                            <img src="./img/fixed-con/fixed-conR9.png" alt="콘텐츠 이미지">
+                        </div>
+                        <div class="swiper-slide fixed-conR9">
+                            <img src="./img/fixed-con/fixed-conR9.png" alt="콘텐츠 이미지">
+                        </div>
+                        <div class="swiper-slide fixed-conR9">
+                            <img src="./img/fixed-con/fixed-conR9.png" alt="콘텐츠 이미지">
+                        </div>
+                        <div class="swiper-slide fixed-conR9">
+                            <img src="./img/fixed-con/fixed-conR9.png" alt="콘텐츠 이미지">
+                        </div>
+                        <div class="swiper-slide fixed-conR9">
+                            <img src="./img/fixed-con/fixed-conR9.png" alt="콘텐츠 이미지">
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--fixed-con-->
+    <section id="width1080">
+        <div class="percent">
+            <div class="inner-percent">
+                <img src="./img/percent/percentImg.png" alt="이미지">
+                <p class="percent-text">
+                    <span>얌무</span>님은<span>'먹방'</span>에서 상위 <span>12%</span>예요!
+                </p>
+            </div>
+        </div>
+        <!--percent-->
+
+        <div class="compare">
+            <div class="compare-title"><span class="mo-del">동일 카테고리의</span> <span>경쟁률이 높은 채널을</span> 비교해보세요!</div>
+            <ul class="compare-nav">
+                <li><a href="javascript:;">구독자수 성장률</a></li>
+                <li><a href="javascript:;">조회수 성장률</a></li>
+                <li><a href="javascript:;">업로드영상 증가율</a></li>
+            </ul>
+            <div class="compare-con">
+                <div class="compare-conW"><a href="javascript:;">
+                        <img src="./img/compare/compare-img1.png" alt="이미지">
+                        <p>입짧은 햇님</p>
+                        <span>구독자 238만명</span>
+                        <img src="./img/compare/compare-icon.png" alt="아이콘" class="compare-icon">
+                    </a></div>
+                <div class="compare-conW"><a href="javascript:;">
+                        <img src="./img/compare/compare-img2.png" alt="이미지">
+                        <p>쯔양</p>
+                        <span>구독자 238만명</span>
+                        <img src="./img/compare/compare-icon.png" alt="아이콘" class="compare-icon">
+                    </a></div>
+                <div class="compare-conW"><a href="javascript:;">
+                        <img src="./img/compare/compare-img3.png" alt="이미지">
+                        <p>밴쯔</p>
+                        <span>구독자 238만명</span>
+                        <img src="./img/compare/compare-icon.png" alt="아이콘" class="compare-icon">
+                    </a></div>
+                <div class="compare-conW"><a href="javascript:;">
+                        <img src="./img/compare/compare-img4.png" alt="이미지">
+                        <p>공대생 변승주</p>
+                        <span>구독자 238만명</span>
+                        <img src="./img/compare/compare-icon.png" alt="아이콘" class="compare-icon">
+                    </a></div>
+                <div class="compare-conW"><a href="javascript:;">
+                        <img src="./img/compare/compare-img5.png" alt="이미지">
+                        <p>햄찌</p>
+                        <span>구독자 238만명</span>
+                        <img src="./img/compare/compare-icon.png" alt="아이콘" class="compare-icon">
+                    </a></div>
+                <div class="compare-conW"><a href="javascript:;">
+                        <img src="./img/compare/compare-img6.png" alt="이미지">
+                        <p>밴쯔</p>
+                        <span>구독자 238만명</span>
+                        <img src="./img/compare/compare-icon.png" alt="아이콘" class="compare-icon">
+                    </a></div>
+                <div class="compare-conW"><a href="javascript:;">
+                        <img src="./img/compare/compare-img1.png" alt="이미지">
+                        <p>입짧은 햇님</p>
+                        <span>구독자 238만명</span>
+                        <img src="./img/compare/compare-icon.png" alt="아이콘" class="compare-icon">
+                    </a></div>
+            </div>
+        </div>
+        <!--compare-->
+
+        <div class="monitoring">
+            <div class="monitoring-title">
+                모니터링 채널과 비교한<span> 항목지표 한눈에 보기</span>
+            </div>
+
+            <div class="monitoring-conW">
+                <div class="monitoring-con">
+                    <p>나의 평균 참여도는?</p>
+                    <img src="./img/monitoring/monitoring-con1.png" alt="컨텐츠">
+                </div>
+                <div class="monitoring-con">
+                    <p>효과가 높은 영상 길이</p>
+                    <img src="./img/monitoring/monitoring-con2.png" alt="컨텐츠">
+                </div>
+                <div class="monitoring-con">
+                    <p>가장 반응 좋은 시간대</p>
+                    <img src="./img/monitoring/monitoring-con3.png" alt="컨텐츠">
+                </div>
+                <div class="monitoring-con">
+                    <p>광고 콘텐츠 평균 개수</p>
+                    <img src="./img/monitoring/monitoring-con4.png" alt="컨텐츠">
+                </div>
+                <div class="monitoring-con">
+                    <p>평균 월 업로드 수</p>
+                    <img src="./img/monitoring/monitoring-con5.png" alt="컨텐츠">
+                </div>
+                <div class="monitoring-con">
+                    <p>많이 언급된 단어들</p>
+                    <img src="./img/monitoring/monitoring-con6.png" alt="컨텐츠">
+                </div>
+            </div>
+
+            <a href="javascript:;">
+                <div class="mo-btn">자세히 보기</div>
+            </a>
+        </div>
+        <!--monitoring-->
+    </section>
+
+    <section id="full-width">
+        <div class="popular">
+            <div class="inner-popular">
+                <div class="popular-title">
+                    <span>모니터링 채널 중</span> 최고 인기영상 <span>살펴보기</span>
+                </div>
+
+                <div class="popular-conW">
+                    <div class="popular-con">
+                        <img src="./img/popular/popular-con1.png" alt="컨텐츠">
+                        <span>도티 TV</span>
+                        <p>[만약에🤔] 무조건 계획대로만 인생을 산다면 ⏰🕹️</p>
+                        <div class="popular-text">
+                            <p>조회수 139만회</p>
+                            <span></span>
+                            <p>2021-08-09</p>
+                        </div>
+                    </div>
+                    <div class="popular-con">
+                        <img src="./img/popular/popular-con2.png" alt="컨텐츠">
+                        <span>침착맨</span>
+                        <p>민트초코로 호들갑 떠는 게 싫다고 했던 사람</p>
+                        <div class="popular-text">
+                            <p>조회수 40만회</p>
+                            <span></span>
+                            <p>2021-08-09</p>
+                        </div>
+                    </div>
+                    <div class="popular-con">
+                        <img src="./img/popular/popular-con3.png" alt="컨텐츠">
+                        <span>BANGTANTV</span>
+                        <p>BTS (방탄소년단) Intro: Persona + 상남자(Boy In Luv)</p>
+                        <div class="popular-text">
+                            <p>조회수 2540만회</p>
+                            <span></span>
+                            <p>2021-08-09</p>
+                        </div>
+                    </div>
+                    <div class="popular-con">
+                        <img src="./img/popular/popular-con4.png" alt="컨텐츠">
+                        <span>침착맨</span>
+                        <p>세 명인데 피자 한 판만 시켜버림</p>
+                        <div class="popular-text">
+                            <p>조회수 40만회</p>
+                            <span></span>
+                            <p>2021-08-09</p>
+                        </div>
+                    </div>
+                    <div class="popular-con">
+                        <img src="./img/popular/popular-con5.png" alt="컨텐츠">
+                        <span>침착맨</span>
+                        <p>침펄풍, 웹툰작가 자존심이 걸린 그림 대결 - 쿵야 캐치마인드</p>
+                        <div class="popular-text">
+                            <p>조회수 139만회</p>
+                            <span></span>
+                            <p>2021-08-09</p>
+                        </div>
+                    </div>
+                    <div class="popular-con">
+                        <img src="./img/popular/popular-con1.png" alt="컨텐츠">
+                        <span>도티 TV</span>
+                        <p>[만약에🤔] 무조건 계획대로만 인생을 산다면 ⏰🕹️</p>
+                        <div class="popular-text">
+                            <p>조회수 139만회</p>
+                            <span></span>
+                            <p>2021-08-09</p>
+                        </div>
+                    </div>
+                    <div class="popular-con">
+                        <img src="./img/popular/popular-con2.png" alt="컨텐츠">
+                        <span>침착맨</span>
+                        <p>민트초코로 호들갑 떠는 게 싫다고 했던 사람</p>
+                        <div class="popular-text">
+                            <p>조회수 40만회</p>
+                            <span></span>
+                            <p>2021-08-09</p>
+                        </div>
+                    </div>
+                    <div class="popular-con">
+                        <img src="./img/popular/popular-con3.png" alt="컨텐츠">
+                        <span>BANGTANTV</span>
+                        <p>BTS (방탄소년단) Intro: Persona + 상남자(Boy In Luv)</p>
+                        <div class="popular-text">
+                            <p>조회수 2540만회</p>
+                            <span></span>
+                            <p>2021-08-09</p>
+                        </div>
+                    </div>
+                    <div class="popular-con">
+                        <img src="./img/popular/popular-con4.png" alt="컨텐츠">
+                        <span>침착맨</span>
+                        <p>세 명인데 피자 한 판만 시켜버림</p>
+                        <div class="popular-text">
+                            <p>조회수 40만회</p>
+                            <span></span>
+                            <p>2021-08-09</p>
+                        </div>
+                    </div>
+                    <div class="popular-con">
+                        <img src="./img/popular/popular-con5.png" alt="컨텐츠">
+                        <span>침착맨</span>
+                        <p>침펄풍, 웹툰작가 자존심이 걸린 그림 대결 - 쿵야 캐치마인드</p>
+                        <div class="popular-text">
+                            <p>조회수 139만회</p>
+                            <span></span>
+                            <p>2021-08-09</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="more">
+                    <a href="javascript:;">
+                        <p>더보기</p>
+                        <img src="./img/icon/plus.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--popular-->
+
+        <div class="copyright">Copyright ⓒ 2024 Hubdnc. All Rights Reserved</div>
+        <!--copyright-->
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.js"></script>
+    <script type="text/javascript" src="./js/jquery.transit.min.js"></script>
+    <script type="text/javascript" src="./js/test.js"></script>
+</body>
+
+</html>
